@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.exist.model">
+    <class name="Roles" table="roles">
+        <id name="roleId" column="roleid">
+            <generator class="identity"/>
+        </id>
+        <property name="role" column="role" type = "string"/>
+        <bag name="personRole" table="person_roles" lazy="false" cascade="all">
+            <key column="roleid" />
+            <many-to-many class="com.exist.model.Person">
+                <column name="person_id" />
+            </many-to-many>
+    </class> 
+</hibernate-mapping>
