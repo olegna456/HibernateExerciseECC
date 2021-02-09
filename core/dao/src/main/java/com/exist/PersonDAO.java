@@ -11,6 +11,7 @@ import com.exist.model.*;
 import java.util.*;
 import org.hibernate.service.ServiceRegistry;
 import java.sql.Statement;
+import org.hibernate.Query;
 
 public class PersonDAO {
 
@@ -81,11 +82,15 @@ public class PersonDAO {
 
 	public List<Person> getAllPersons() {
 		openCurrentSessionWithTransaction();
-        // Query query = "SELECT * FROM Person";
+        // String q = "select firstname from person";
+         // Query query = "SELECT * FROM person";
 
 		// openSessionFactory();
 		// openSession();		
-        List<Person> allPersons = (List<Person>) getSession().createQuery("from Person").list();
+
+        // Query query = getSession().createQuery(q);
+        // List<Person> allPersons = query.list();
+        List<Person> allPersons = (List<Person>) getSession().createQuery(q).list();
         // session.close();
         closeCurrentSessionWithTransaction();
         return allPersons;
