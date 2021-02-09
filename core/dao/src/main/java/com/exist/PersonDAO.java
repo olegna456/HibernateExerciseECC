@@ -10,6 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import com.exist.model.*;
 import java.util.*;
 import org.hibernate.service.ServiceRegistry;
+import java.sql.Statement;
 
 public class PersonDAO {
 
@@ -80,6 +81,7 @@ public class PersonDAO {
 
 	public List<Person> getAllPersons() {
 		openCurrentSessionWithTransaction();
+        // Query query = "SELECT * FROM Person";
 
 		// openSessionFactory();
 		// openSession();		
