@@ -92,6 +92,9 @@ public class PersonDAO {
         // List<Person> allPersons = query.list();
         List<Person> allPersons = (List<Person>) getSession().createQuery(q).list();
         // session.close();
+
+        // Query query = getSession().createQuery("SELECT lastName FROM Person");
+        // List<Person> allPersons = (List<Person>)query.list();
         closeCurrentSessionWithTransaction();
         return allPersons;
        
