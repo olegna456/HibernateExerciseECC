@@ -122,6 +122,16 @@ public class Main {
                 }
                 break;
             case 6:
+                message = "Enter person(s) id to delete role: ";
+                min = 1; max = 100;
+                int personIdToDeleteRole = UserInputs.getIntInput(message, min, max);
+                message = "Enter role id: ";
+                roleId = UserInputs.getIntInput(message, min, max);
+                try {
+
+                }catch(Exception e) {
+                    
+                }
                 break;
             case 7:
                 message = "Enter person's id to add contact information: ";

@@ -90,7 +90,10 @@ public class PersonDAO {
 
         // Query query = getSession().createQuery(q);
         // List<Person> allPersons = query.list();
-        List<Person> allPersons = (List<Person>) getSession().createQuery(q).list();
+        String hql = "from Person";
+        Query query = getSession().createQuery(hql);
+        List<Person> allPersons = (List<Person>)query.list();
+        // List<Person> allPersons = (List<Person>) getSession().createQuery("from Person").list();
         // session.close();
 
         // Query query = getSession().createQuery("SELECT lastName FROM Person");
